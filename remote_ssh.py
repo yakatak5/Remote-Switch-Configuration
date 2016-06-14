@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#!python
+
 import paramiko
 import sys
 import json
@@ -61,5 +64,5 @@ if __name__=='__main__':
 	
 
 
-"# Remote-Switch-Configuration" 
-"# Remote-Switch-Configuration" 
+
+
