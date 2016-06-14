@@ -40,11 +40,11 @@ class device() :
 		print json.dumps (stdout.readlines(), indent = 3)
 		#send command and print output
 
-	def EIGRP(self, intr, AS, ins, ip):
+	def EIGRP(self, intr, AS, ip):
 		ssh = paramiko.SSHClient()
 		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh.connect(self.ip, 22, self.user, self.pwd, look_for_keys=False, timeout=5)
-		stdin,stdout,stderr = ssh.exec_command('conf t ; feature eigrp ; router eigrp ' + AS +' ; int ' + intr +  ' ; ip address ' + ip + ' ; ip router eigrp ' + ins + ' ; copy run start')
+		stdin,stdout,stderr = ssh.exec_command('conf t ; feature eigrp ; router eigrp ' + AS +' ; int ' + intr +  ' ; ip address ' + ip + ' ; ' ; copy run start')
 		print json.dumps (stdout.readlines(), indent = 3)
 
 		#configures eigrp
