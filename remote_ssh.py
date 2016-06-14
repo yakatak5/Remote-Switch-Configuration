@@ -37,7 +37,9 @@ class device() :
 		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh.connect(self.ip, 22, self.user, self.pwd, look_for_keys=False, timeout=5)
 		stdin,stdout,stderr = ssh.exec_command( command )
-		print json.dumps (stdout.readlines(), indent = 3)
+		out = [line for line in stdout.readlines()]
+		for line in out:
+			print line
 		#send command and print output
 
 	def EIGRP(self, intr, AS, ip):
